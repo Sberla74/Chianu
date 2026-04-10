@@ -1,0 +1,368 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="Casa Duna — La Terrazza sulla Spiaggia. Donnalucata, Sicilia. Direttamente sulla spiaggia, 6 ospiti, 2 camere, 2 bagni. CHIANU AL MARE.">
+<title>Casa Duna — CHIANU AL MARE | Donnalucata, Sicilia</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Spectral:ital,wght@0,300;0,400;1,300&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--sand:#F5EFE0;--stone:#C8B89A;--earth:#8B7355;--bark:#4A3728;--ink:#1A1410;--sea:#2C5F7A;--white:#FDFAF5;--gold:#C9973A;}
+html{scroll-behavior:smooth}
+body{font-family:'Spectral',serif;background:var(--white);color:var(--ink);font-size:17px;line-height:1.7;overflow-x:hidden;}
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:100;display:flex;align-items:center;justify-content:space-between;padding:20px 48px;transition:background .4s,padding .3s;background:rgba(253,250,245,.92);backdrop-filter:blur(12px);border-bottom:1px solid rgba(74,55,40,.1);}
+.nav-logo{font-family:'Cormorant Garamond',serif;font-size:18px;font-weight:300;letter-spacing:.25em;color:var(--ink);text-decoration:none;}
+.nav-back{font-size:13px;letter-spacing:.1em;color:var(--earth);text-decoration:none;display:flex;align-items:center;gap:8px;}
+.nav-back:hover{color:var(--ink);}
+.nav-breadcrumb{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);}
+/* HERO */
+.hero{height:75vh;min-height:500px;position:relative;display:flex;align-items:flex-end;padding:60px 80px;overflow:hidden;margin-top:60px;}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(160deg,#0D2535,#1A4A6A,#2C7A9A);background-image:url('img/casa-duna-hero.jpg');background-size:cover;background-position:center;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(to top,rgba(10,20,30,.7) 0%,rgba(10,20,30,.1) 60%);}
+.hero-content{position:relative;z-index:2;}
+.hero-category{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--stone);margin-bottom:12px;}
+.hero-title{font-family:'Cormorant Garamond',serif;font-size:clamp(48px,7vw,80px);font-weight:300;color:var(--white);line-height:.95;margin-bottom:12px;}
+.hero-sub{font-size:16px;color:rgba(255,255,255,.65);font-weight:300;font-style:italic;}
+.hero-rating{position:absolute;top:80px;right:80px;text-align:center;}
+.hero-stars{font-size:20px;margin-bottom:4px;}
+.hero-rating-num{font-family:'Cormorant Garamond',serif;font-size:36px;font-weight:300;color:var(--white);}
+.hero-rating-label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);}
+/* MAIN */
+.main{max-width:1100px;margin:0 auto;padding:80px 48px;}
+.grid{display:grid;grid-template-columns:1fr 340px;gap:64px;align-items:start;}
+/* LEFT */
+.section-label{font-size:10px;letter-spacing:.4em;text-transform:uppercase;color:var(--earth);margin-bottom:16px;}
+.desc{font-size:17px;line-height:1.8;color:#3A2A1A;font-weight:300;margin-bottom:40px;}
+.desc em{font-style:italic;color:var(--earth);}
+/* DOTAZIONI */
+.amenities{margin-bottom:48px;}
+.amenities h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--ink);margin-bottom:24px;}
+.amenities-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.amenity{display:flex;align-items:center;gap:10px;padding:10px 0;border-bottom:1px solid rgba(200,184,154,.2);font-size:14px;color:#5A4030;}
+.amenity-icon{font-size:16px;width:24px;text-align:center;}
+/* CAMERE */
+.rooms{margin-bottom:48px;}
+.rooms h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--ink);margin-bottom:24px;}
+.room-item{padding:16px 0;border-bottom:1px solid rgba(200,184,154,.2);}
+.room-name{font-weight:400;color:var(--ink);margin-bottom:4px;}
+.room-desc{font-size:14px;color:var(--earth);font-weight:300;}
+/* NOTE */
+.notes{background:var(--sand);padding:28px;border-left:3px solid var(--stone);margin-bottom:48px;}
+.notes p{font-size:14px;color:#5A4030;line-height:1.7;margin-bottom:8px;}
+.notes p:last-child{margin-bottom:0;}
+/* RECENSIONI */
+.reviews{margin-bottom:48px;}
+.reviews h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--ink);margin-bottom:24px;}
+.rating-grid{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-bottom:32px;}
+.rating-item{display:flex;justify-content:space-between;align-items:center;padding:10px 0;border-bottom:1px solid rgba(200,184,154,.2);}
+.rating-label{font-size:13px;color:var(--earth);}
+.rating-bar-wrap{display:flex;align-items:center;gap:8px;}
+.rating-bar{width:80px;height:3px;background:rgba(200,184,154,.3);border-radius:2px;overflow:hidden;}
+.rating-fill{height:100%;background:var(--sea);border-radius:2px;}
+.rating-num{font-size:13px;font-weight:400;color:var(--ink);min-width:28px;text-align:right;}
+.review-card{background:var(--sand);padding:24px;margin-bottom:12px;}
+.review-text{font-size:15px;line-height:1.7;color:#3A2A1A;font-weight:300;font-style:italic;margin-bottom:12px;}
+.review-meta{font-size:12px;color:var(--stone);letter-spacing:.05em;}
+.review-keywords{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:32px;}
+.review-kw{padding:4px 12px;background:rgba(44,95,122,.08);border:1px solid rgba(44,95,122,.15);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--sea);}
+/* SIDEBAR */
+.sidebar{position:sticky;top:90px;}
+.cta-card{background:var(--ink);padding:36px;margin-bottom:20px;}
+.cta-title{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--white);margin-bottom:8px;}
+.cta-sub{font-size:13px;color:var(--stone);margin-bottom:28px;font-weight:300;}
+.cta-btn{display:block;background:var(--white);color:var(--ink);text-align:center;padding:16px;font-family:'Cormorant Garamond',serif;font-size:18px;text-decoration:none;margin-bottom:12px;transition:all .3s;letter-spacing:.06em;}
+.cta-btn:hover{background:var(--sand);}
+.cta-btn-sec{display:block;border:1px solid rgba(255,255,255,.2);color:rgba(255,255,255,.7);text-align:center;padding:14px;font-size:13px;text-decoration:none;transition:all .3s;letter-spacing:.1em;text-transform:uppercase;}
+.cta-btn-sec:hover{background:rgba(255,255,255,.08);}
+.info-card{border:1px solid rgba(200,184,154,.3);padding:28px;}
+.info-item{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid rgba(200,184,154,.2);font-size:14px;}
+.info-item:last-child{border-bottom:none;}
+.info-label{color:var(--stone);}
+.info-value{color:var(--ink);font-weight:400;}
+.back-link{display:block;text-align:center;padding:16px;font-size:13px;letter-spacing:.15em;text-transform:uppercase;color:var(--earth);text-decoration:none;border:1px solid var(--stone);transition:all .3s;margin-top:12px;}
+.back-link:hover{background:var(--sand);}
+/* FOOTER */
+footer{background:var(--ink);padding:40px 48px;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:16px;}
+.footer-logo{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;letter-spacing:.3em;color:rgba(255,255,255,.4);}
+.footer-text{font-size:11px;letter-spacing:.15em;text-transform:uppercase;color:rgba(255,255,255,.25);}
+/* RESPONSIVE */
+@media(max-width:860px){nav{padding:14px 20px;}.hero{padding:40px 24px;height:60vh;}.hero-rating{top:auto;bottom:100px;right:24px;}.main{padding:48px 24px;}.grid{grid-template-columns:1fr;}.sidebar{position:static;}.amenities-grid{grid-template-columns:1fr;}.rating-grid{grid-template-columns:1fr;}footer{padding:32px 24px;flex-direction:column;text-align:center;}}
+
+/* CALENDARIO */
+.cal-section{margin-bottom:48px;}.cal-section h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--ink);margin-bottom:8px;}.cal-sub{font-size:14px;color:var(--earth);margin-bottom:24px;font-style:italic;}.cal-wrap{background:var(--sand);padding:28px;}.cal-header{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}.cal-nav{background:none;border:1px solid var(--stone);padding:6px 14px;cursor:pointer;font-size:16px;color:var(--earth);transition:all .2s;}.cal-nav:hover{background:var(--stone);color:var(--white);}.cal-month{font-family:'Cormorant Garamond',serif;font-size:22px;font-weight:300;color:var(--ink);}.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:2px;margin-bottom:20px;}.cal-day-name{text-align:center;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);padding:8px 0;}.cal-day{text-align:center;padding:10px 4px;font-size:14px;cursor:pointer;border-radius:2px;transition:all .15s;color:var(--ink);border:1px solid transparent;}.cal-day.empty{cursor:default;}.cal-day.past{color:rgba(200,184,154,.5);cursor:not-allowed;}.cal-day:not(.empty):not(.past):hover{background:rgba(44,95,122,.1);border-color:rgba(44,95,122,.2);}.cal-day.start{background:var(--sea);color:var(--white);}.cal-day.end{background:var(--sea);color:var(--white);}.cal-day.range{background:rgba(44,95,122,.12);}.cal-form{display:flex;flex-direction:column;gap:12px;margin-top:16px;padding-top:16px;border-top:1px solid rgba(200,184,154,.3);}.cal-dates-display{font-size:14px;color:var(--ink);padding:10px 0;}.cal-dates-display span{font-weight:600;color:var(--sea);}.cal-guests{display:flex;align-items:center;gap:12px;}.cal-guests label{font-size:13px;color:var(--earth);white-space:nowrap;}.cal-guests select{flex:1;padding:10px 12px;border:1px solid var(--stone);background:var(--white);font-family:'Spectral',serif;font-size:14px;color:var(--ink);}.cal-submit{display:block;background:var(--ink);color:var(--white);text-align:center;padding:16px;font-family:'Cormorant Garamond',serif;font-size:18px;cursor:pointer;border:none;width:100%;transition:all .3s;letter-spacing:.06em;}.cal-submit:hover{background:var(--bark);}.cal-submit:disabled{background:rgba(200,184,154,.4);cursor:not-allowed;}.cal-reset{font-size:12px;color:var(--stone);text-align:center;cursor:pointer;text-decoration:underline;margin-top:4px;}
+
+/* CALENDARIO */
+.cal-section{padding:48px 0;border-top:1px solid rgba(200,184,154,.2);margin-top:48px;}
+.cal-section h2{font-family:'Cormorant Garamond',serif;font-size:28px;font-weight:300;color:var(--ink);margin-bottom:8px;}
+.cal-sub{font-size:14px;color:var(--earth);margin-bottom:28px;}
+.cal-wrap{background:var(--sand);padding:28px;}
+.cal-nav{display:flex;align-items:center;justify-content:space-between;margin-bottom:20px;}
+.cal-month{font-family:'Cormorant Garamond',serif;font-size:20px;font-weight:300;color:var(--ink);}
+.cal-btn{background:none;border:1px solid var(--stone);width:32px;height:32px;cursor:pointer;font-size:16px;color:var(--earth);display:flex;align-items:center;justify-content:center;}
+.cal-btn:hover{background:var(--stone);}
+.cal-grid{display:grid;grid-template-columns:repeat(7,1fr);gap:4px;}
+.cal-day-label{text-align:center;font-size:10px;letter-spacing:.15em;text-transform:uppercase;color:var(--stone);padding:6px 0;}
+.cal-day{text-align:center;padding:8px 4px;font-size:13px;cursor:pointer;border:1px solid transparent;transition:all .15s;min-height:36px;display:flex;align-items:center;justify-content:center;}
+.cal-day:hover:not(.cal-empty):not(.cal-past){background:rgba(44,95,122,.1);border-color:rgba(44,95,122,.2);}
+.cal-day.cal-empty{cursor:default;}
+.cal-day.cal-past{color:rgba(200,184,154,.5);cursor:default;}
+.cal-day.cal-selected-start,.cal-day.cal-selected-end{background:var(--sea);color:#fff;border-color:var(--sea);}
+.cal-day.cal-in-range{background:rgba(44,95,122,.1);border-color:transparent;}
+.cal-day.cal-today{font-weight:600;color:var(--earth);}
+.cal-inputs{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;margin-top:20px;}
+.cal-input-group label{font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);display:block;margin-bottom:6px;}
+.cal-input-group input,.cal-input-group select{width:100%;padding:10px 12px;border:1px solid rgba(200,184,154,.4);background:var(--white);font-family:'Spectral',serif;font-size:14px;color:var(--ink);}
+.cal-submit{margin-top:16px;display:block;width:100%;background:var(--ink);color:var(--white);text-align:center;padding:16px;font-family:'Cormorant Garamond',serif;font-size:18px;text-decoration:none;cursor:pointer;border:none;transition:background .3s;letter-spacing:.06em;}
+.cal-submit:hover{background:var(--bark);}
+@media(max-width:600px){.cal-inputs{grid-template-columns:1fr 1fr;}.cal-day{font-size:11px;padding:6px 2px;}}
+
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">CHIANU</a>
+  <div class="nav-breadcrumb">AL MARE · Casa Duna</div>
+  <a href="chianu-al-mare.html" class="nav-back">← CHIANU AL MARE</a>
+</nav>
+
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-category">CHIANU AL MARE · Donnalucata</div>
+    <h1 class="hero-title">Casa Duna<br><em style="font-style:italic;font-size:.7em;color:var(--stone)">La Terrazza sulla Spiaggia</em></h1>
+    <div class="hero-sub">Direttamente sulla spiaggia · 6 ospiti · 2 camere · 2 bagni</div>
+  </div>
+  <div class="hero-rating">
+    <div class="hero-stars">★★★★★</div>
+    <div class="hero-rating-num">4,91</div>
+    <div class="hero-rating-label">44 recensioni</div>
+  </div>
+</section>
+
+<div class="main">
+  <div class="grid">
+    <div class="left">
+
+      <div class="section-label">La casa</div>
+      <p class="desc">Prova ad immaginare di svegliarti al mattino, aprire la porta ed essere con i piedi sulla sabbia in un posto incontaminato dal turismo di massa. Prova ad immaginare di fare colazione in terrazza con la vista delle onde del mare mai sazie di accarezzare la riva.<br><br>
+      Casa Duna è <em>direttamente sulla spiaggia</em> di Donnalucata — una delle ultime coste libere del Mediterraneo. Tre terrazze, due edifici indipendenti, silenzio autentico.</p>
+
+      <div class="amenities">
+        <div class="section-label">Dotazioni</div>
+        <h2>Cosa troverai</h2>
+        <div class="amenities-grid">
+          <div class="amenity"><span class="amenity-icon">🌊</span> Accesso diretto alla spiaggia</div>
+          <div class="amenity"><span class="amenity-icon">🏖️</span> Vista mare da tutte le terrazze</div>
+          <div class="amenity"><span class="amenity-icon">❄️</span> Aria condizionata</div>
+          <div class="amenity"><span class="amenity-icon">📶</span> WiFi gratuito</div>
+          <div class="amenity"><span class="amenity-icon">📺</span> TV a schermo piatto</div>
+          <div class="amenity"><span class="amenity-icon">🍳</span> Cucina attrezzata</div>
+          <div class="amenity"><span class="amenity-icon">🔥</span> Barbecue</div>
+          <div class="amenity"><span class="amenity-icon">👶</span> Seggiolone e culla bimbo</div>
+          <div class="amenity"><span class="amenity-icon">🚗</span> Parcheggio interno (apr-giu, ott)</div>
+          <div class="amenity"><span class="amenity-icon">🏠</span> 3 terrazze (2 fronte mare, 1 giardino)</div>
+        </div>
+      </div>
+
+      <div class="rooms">
+        <div class="section-label">Dove dormirai</div>
+        <h2>Le camere</h2>
+        <div class="room-item">
+          <div class="room-name">Corpo Centrale — Camera matrimoniale</div>
+          <div class="room-desc">1 letto matrimoniale + 2 letti singoli nel soppalco con terrazzino vista mare · aria condizionata · bagno con doccia</div>
+        </div>
+        <div class="room-item">
+          <div class="room-name">Dependance — Camera matrimoniale</div>
+          <div class="room-desc">1 letto matrimoniale · bagno con doccia · edificio indipendente · affittata solo insieme al corpo centrale</div>
+        </div>
+        <div class="room-item">
+          <div class="room-name">Zona Living</div>
+          <div class="room-desc">Soggiorno con soppalco · cucina · 1 divano · apertura sulle terrazze fronte mare</div>
+        </div>
+      </div>
+
+            <div class="cal-section">
+        <div class="section-label">Verifica disponibilità</div>
+        <h2>Seleziona le date</h2>
+        <p class="cal-sub">Scegli arrivo e partenza — ti risponderemo entro 12 ore.</p>
+        <div class="cal-wrap">
+          <div class="cal-header">
+            <button class="cal-nav" onclick="calPrev()">‹</button>
+            <div class="cal-month" id="calMonth"></div>
+            <button class="cal-nav" onclick="calNext()">›</button>
+          </div>
+          <div class="cal-grid" id="calGrid"></div>
+          <div class="cal-form">
+            <div class="cal-dates-display" id="calDatesDisplay">Seleziona la data di arrivo</div>
+            <div class="cal-guests">
+              <label>Ospiti:</label>
+              <select id="calGuests"><option value="1">1 ospiti</option><option value="2">2 ospiti</option><option value="3">3 ospiti</option><option value="4">4 ospiti</option><option value="5">5 ospiti</option><option value="6">6 ospiti</option></select>
+            </div>
+            <button class="cal-submit" id="calSubmit" disabled onclick="calSend()">💬 Verifica su WhatsApp</button>
+            <div class="cal-reset" onclick="calReset()">Cancella selezione</div>
+          </div>
+        </div>
+      </div>
+      <div class="notes">
+        <div class="section-label" style="margin-bottom:10px">Da sapere</div>
+        <p>⚡ Il costo dell'elettricità è incluso fino a 50 KWh. L'eccedenza ha una tariffa di €0,50/KWh.</p>
+        <p>🚗 Parcheggio interno disponibile tutti i mesi eccetto luglio, agosto e settembre.</p>
+        <p>🏁 Check-in: 15:00–21:00 · Check-out: entro le 10:00 · Massimo 6 ospiti</p>
+        <p>📅 Soggiorno minimo: 4 notti · In alta stagione: 7 notti</p>
+        <p>💶 A partire da €80 a notte</p>
+        <p>📍 Donnalucata, frazione di Scicli — 5 minuti a piedi dal centro del paese</p>
+      </div>
+
+      <div class="reviews">
+        <div class="section-label">Cosa dicono gli ospiti</div>
+        <h2>4,91 · Amato dagli ospiti</h2>
+        <div class="rating-grid">
+          <div class="rating-item"><span class="rating-label">Pulizia</span><div class="rating-bar-wrap"><div class="rating-bar"><div class="rating-fill" style="width:96%"></div></div><span class="rating-num">4,8</span></div></div>
+          <div class="rating-item"><span class="rating-label">Precisione</span><div class="rating-bar-wrap"><div class="rating-bar"><div class="rating-fill" style="width:96%"></div></div><span class="rating-num">4,8</span></div></div>
+          <div class="rating-item"><span class="rating-label">Check-in</span><div class="rating-bar-wrap"><div class="rating-bar"><div class="rating-fill" style="width:100%"></div></div><span class="rating-num">5,0</span></div></div>
+          <div class="rating-item"><span class="rating-label">Comunicazione</span><div class="rating-bar-wrap"><div class="rating-bar"><div class="rating-fill" style="width:100%"></div></div><span class="rating-num">5,0</span></div></div>
+          <div class="rating-item"><span class="rating-label">Posizione</span><div class="rating-bar-wrap"><div class="rating-bar"><div class="rating-fill" style="width:100%"></div></div><span class="rating-num">5,0</span></div></div>
+          <div class="rating-item"><span class="rating-label">Qualità/prezzo</span><div class="rating-bar-wrap"><div class="rating-bar"><div class="rating-fill" style="width:96%"></div></div><span class="rating-num">4,8</span></div></div>
+        </div>
+        <div class="review-keywords">
+          <span class="review-kw">🏖️ Spiaggia</span>
+          <span class="review-kw">📍 Posizione</span>
+          <span class="review-kw">🤝 Ospitalità</span>
+          <span class="review-kw">🌅 Vista</span>
+          <span class="review-kw">🚶 Pedonabilità</span>
+          <span class="review-kw">🤫 Silenzio</span>
+        </div>
+        <div class="review-card">
+          <div class="review-text">"Una delle sistemazioni più belle che abbia mai vissuto. Svegliarsi con i piedi sulla sabbia è un'esperienza che non si dimentica. La casa è esattamente come nelle foto, anzi meglio."</div>
+          <div class="review-meta">Ospite Airbnb · ★★★★★</div>
+        </div>
+        <div class="review-card">
+          <div class="review-text">"Posizione unica, direttamente sul mare. La spiaggia è libera e mai affollata. Fabrizio è stato disponibilissimo e preciso in ogni dettaglio."</div>
+          <div class="review-meta">Ospite Airbnb · ★★★★★</div>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="sidebar">
+      <div class="cta-card">
+        <div class="cta-title">Verifica disponibilità</div>
+        <div class="cta-sub">Scrivici su WhatsApp — ti rispondiamo entro un'ora</div>
+        <a href="https://wa.me/393490069083?text=Ciao%2C%20vorrei%20verificare%20la%20disponibilità%20di%20Casa%20Duna%20a%20Donnalucata" class="cta-btn" target="_blank">💬 Scrivi su WhatsApp</a>
+        <a href="mailto:info@sanbartolomeocasaeputia.it?subject=Disponibilità Casa Duna" class="cta-btn-sec">✉️ Scrivi una email</a>
+      </div>
+      <div class="info-card">
+        <div class="info-item"><span class="info-label">Ospiti</span><span class="info-value">Max 6</span></div>
+        <div class="info-item"><span class="info-label">Camere</span><span class="info-value">2 + soppalco</span></div>
+        <div class="info-item"><span class="info-label">Bagni</span><span class="info-value">2</span></div>
+        <div class="info-item"><span class="info-label">Posizione</span><span class="info-value">Direttamente sul mare</span></div>
+        <div class="info-item"><span class="info-label">Check-in</span><span class="info-value">15:00 – 21:00</span></div>
+        <div class="info-item"><span class="info-label">Check-out</span><span class="info-value">Entro le 10:00</span></div>
+        <div class="info-item"><span class="info-label">Host</span><span class="info-value">Fabrizio · Superhost ⭐</span></div>
+      </div>
+      <a href="chianu-al-mare.html" class="back-link">← Torna a CHIANU AL MARE</a>
+    </div>
+  </div>
+</div>
+
+<footer>
+  <a href="index.html" class="footer-logo">CHIANU</a>
+  <div class="footer-text">Chianu chianu, si scopri tuttu · Scicli, Sicilia</div>
+  <div style="font-size:9px;color:rgba(255,255,255,.25);letter-spacing:.08em;">CIN: IT088011C2X3FRYGRA</div>
+</footer>
+<script>
+
+function initCalendar(propName, waNum) {
+  var today = new Date();
+  today.setHours(0,0,0,0);
+  var viewYear = today.getFullYear();
+  var viewMonth = today.getMonth();
+  var startDate = null;
+  var endDate = null;
+  var selecting = 'start'; // 'start' or 'end'
+
+  var mesi = ['Gennaio','Febbraio','Marzo','Aprile','Maggio','Giugno','Luglio','Agosto','Settembre','Ottobre','Novembre','Dicembre'];
+  var giorni = ['Lu','Ma','Me','Gi','Ve','Sa','Do'];
+
+  function fmt(d) {
+    if(!d) return '';
+    return ('0'+d.getDate()).slice(-2)+'/'+('0'+(d.getMonth()+1)).slice(-2)+'/'+d.getFullYear();
+  }
+  function fmtWA(d) {
+    if(!d) return '';
+    return ('0'+d.getDate()).slice(-2)+' '+mesi[d.getMonth()]+' '+d.getFullYear();
+  }
+
+  function renderCal() {
+    var grid = document.getElementById('calGrid');
+    var monthLabel = document.getElementById('calMonth');
+    if(!grid||!monthLabel) return;
+    monthLabel.textContent = mesi[viewMonth] + ' ' + viewYear;
+
+    var firstDay = new Date(viewYear, viewMonth, 1).getDay(); // 0=sun
+    firstDay = (firstDay === 0) ? 6 : firstDay - 1; // convert to Mon=0
+    var daysInMonth = new Date(viewYear, viewMonth+1, 0).getDate();
+
+    var html = giorni.map(function(g){ return '<div class="cal-day-label">'+g+'</div>'; }).join('');
+    for(var i=0;i<firstDay;i++) html += '<div class="cal-day cal-empty"></div>';
+    for(var d=1;d<=daysInMonth;d++) {
+      var date = new Date(viewYear, viewMonth, d);
+      var cls = 'cal-day';
+      if(date < today) cls += ' cal-past';
+      if(date.toDateString() === today.toDateString()) cls += ' cal-today';
+      if(startDate && date.toDateString() === startDate.toDateString()) cls += ' cal-selected-start';
+      if(endDate && date.toDateString() === endDate.toDateString()) cls += ' cal-selected-end';
+      if(startDate && endDate && date > startDate && date < endDate) cls += ' cal-in-range';
+      html += '<div class="'+cls+'" data-date="'+date.toISOString()+'" onclick="calClick(this)">'+d+'</div>';
+    }
+    grid.innerHTML = html;
+
+    // Aggiorna campi
+    var inStart = document.getElementById('calStart');
+    var inEnd = document.getElementById('calEnd');
+    if(inStart) inStart.value = fmt(startDate);
+    if(inEnd) inEnd.value = fmt(endDate);
+  }
+
+  window.calClick = function(el) {
+    var date = new Date(el.dataset.date);
+    if(date < today) return;
+    if(selecting === 'start') {
+      startDate = date; endDate = null; selecting = 'end';
+    } else {
+      if(date <= startDate) { startDate = date; endDate = null; selecting = 'end'; }
+      else { endDate = date; selecting = 'start'; }
+    }
+    renderCal();
+  };
+
+  window.calPrev = function() {
+    viewMonth--; if(viewMonth<0){viewMonth=11;viewYear--;} renderCal();
+  };
+  window.calNext = function() {
+    viewMonth++; if(viewMonth>11){viewMonth=0;viewYear++;} renderCal();
+  };
+
+  window.calSubmit = function() {
+    if(!startDate || !endDate) { alert('Seleziona le date di arrivo e partenza.'); return; }
+    var ospiti = document.getElementById('calGuests').value || '2';
+    var notti = Math.round((endDate-startDate)/864e5);
+    var msg = 'Ciao! Vorrei verificare la disponibilità di '+propName+
+      ' dal '+fmtWA(startDate)+' al '+fmtWA(endDate)+
+      ' ('+notti+' nott'+(notti===1?'e':'i')+') per '+ospiti+' person'+(ospiti==='1'?'a':'e')+'.';
+    window.open('https://wa.me/'+waNum+'?text='+encodeURIComponent(msg), '_blank');
+  };
+
+  renderCal();
+}
+
+window.addEventListener("DOMContentLoaded", function(){
+  initCalendar("Casa Duna", "393490069083");
+});
+</script>
+</body>
+</html>
